@@ -1,17 +1,16 @@
 (function () {
   document.addEventListener("DOMContentLoaded", function () {
     // Seleccionamos todos los headers que controlan el menú
-    const headers: NodeListOf<Element> =
-      document.querySelectorAll(".menu-header");
+    const headers = document.querySelectorAll(".menu-header");
 
-    headers.forEach((header: Element) => {
+    headers.forEach(function (header) {
       header.addEventListener("click", function () {
         // Obtenemos el id del contenido que se quiere mostrar
-        const targetId: string | null = this.getAttribute("data-target");
+        const targetId = this.getAttribute("data-target");
 
         // Verificamos si el ID no es null
         if (targetId) {
-          const content: HTMLElement | null = document.getElementById(targetId);
+          const content = document.getElementById(targetId);
 
           // Si encontramos el contenido, alternamos entre mostrar y ocultar
           if (content) {
